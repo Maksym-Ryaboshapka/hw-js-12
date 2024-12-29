@@ -1,0 +1,26 @@
+{
+  "name": "hw-js-12",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "npx parcel src/index.html",
+    "build": "parcel build src/index.html --public-url ./",
+    "deploy": "gh-pages -d dist",
+    "predeploy": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Maksym-Ryaboshapka/hw-js-12.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Maksym-Ryaboshapka/hw-js-12/issues"
+  },
+  "homepage": "https://github.com/Maksym-Ryaboshapka/hw-js-12",
+  "description": "",
+  "dependencies": {
+    "gh-pages": "^6.2.0",
+    "parcel": "^2.13.3"
+  }
+}
