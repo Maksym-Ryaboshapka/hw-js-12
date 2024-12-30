@@ -626,45 +626,25 @@ class CountdownTimer {
         }, 1000);
     }
 }
+const infoBtn = document.querySelector(".info-btn");
 class Animations {
     static timeAnimations(selector) {
+        infoBtn.removeEventListener("click", infoBtnCallback);
         document.querySelectorAll(selector).forEach((elem)=>{
-            if (elem.textContent.toLowerCase() === "days") setTimeout(()=>{
-                elem.style.top = "70px";
-                elem.style.zIndex = "0";
-            }, 500);
-            else if (elem.textContent.toLowerCase() === "hours") setTimeout(()=>{
-                elem.style.top = "70px";
-                elem.style.zIndex = "0";
-            }, 1000);
-            else if (elem.textContent.toLowerCase() === "minutes") setTimeout(()=>{
-                elem.style.top = "70px";
-                elem.style.zIndex = "0";
-            }, 1500);
-            else if (elem.textContent.toLowerCase() === "seconds") setTimeout(()=>{
-                elem.style.top = "70px";
-                elem.style.zIndex = "0";
-            }, 2000);
+            if (elem.textContent.toLowerCase() === "days") setTimeout(()=>elem.style.top = "70px", 500);
+            else if (elem.textContent.toLowerCase() === "hours") setTimeout(()=>elem.style.top = "70px", 1000);
+            else if (elem.textContent.toLowerCase() === "minutes") setTimeout(()=>elem.style.top = "70px", 1500);
+            else if (elem.textContent.toLowerCase() === "seconds") setTimeout(()=>elem.style.top = "70px", 2000);
         });
         setTimeout(()=>{
             document.querySelectorAll(selector).forEach((elem)=>{
-                if (elem.textContent.toLowerCase() === "days") setTimeout(()=>{
-                    elem.style.top = "120px";
-                    elem.style.zIndex = "0";
-                }, 2000);
-                else if (elem.textContent.toLowerCase() === "hours") setTimeout(()=>{
-                    elem.style.top = "120px";
-                    elem.style.zIndex = "0";
-                }, 1500);
-                else if (elem.textContent.toLowerCase() === "minutes") setTimeout(()=>{
-                    elem.style.top = "120px";
-                    elem.style.zIndex = "0";
-                }, 1000);
-                else if (elem.textContent.toLowerCase() === "seconds") setTimeout(()=>{
-                    elem.style.top = "120px";
-                    elem.style.zIndex = "0";
-                }, 500);
-                setTimeout(()=>elem.style.zIndex = "-1", 2250);
+                if (elem.textContent.toLowerCase() === "days") setTimeout(()=>elem.style.top = "120px", 2000);
+                else if (elem.textContent.toLowerCase() === "hours") setTimeout(()=>elem.style.top = "120px", 1500);
+                else if (elem.textContent.toLowerCase() === "minutes") setTimeout(()=>elem.style.top = "120px", 1000);
+                else if (elem.textContent.toLowerCase() === "seconds") setTimeout(()=>elem.style.top = "120px", 500);
+                setTimeout(()=>{
+                    infoBtn.addEventListener("click", infoBtnCallback);
+                }, 2250);
             });
         }, 4000);
     }
@@ -673,11 +653,11 @@ const countdownTimer = new CountdownTimer({
     selector: "#timer-1",
     targetDate: new Date("Jul 17, 2025")
 });
-const infoBtn = document.querySelector(".info-btn");
 countdownTimer.start();
-infoBtn.addEventListener("click", (e)=>{
+const infoBtnCallback = (e)=>{
     Animations.timeAnimations(".label");
-});
+};
+infoBtn.addEventListener("click", infoBtnCallback);
 
 },{}]},["80cCk","1SICI"], "1SICI", "parcelRequire94c2")
 
